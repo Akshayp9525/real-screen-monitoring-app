@@ -1,0 +1,17 @@
+.signin {
+  color: rgb(255, 255, 255) !important;
+  background-color: rgb(105, 108, 255) !important;
+  width: 100% !important;
+  font-weight: 500 !important;
+  line-height: 24px !important;
+  letter-spacing: 0.3px !important;
+  border-radius: 8px !important;
+  padding: 0.5rem 1.625rem !important;
+}
+
+.login{
+    background-color: #F5F5F9;
+}
+#title-bar {
+    -webkit-app-region: drag;
+  }
