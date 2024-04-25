@@ -11,3 +11,15 @@ contextBridge.exposeInMainWorld('api', {
     }
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+
+    const closeButton = document.getElementById('close-button');
+
+    if (closeButton) {
+        closeButton.addEventListener('click', () => {
+            ipcRenderer.send('close-window');
+        });
+    } else {
+        console.log('Close button not found');
+    }
+});

@@ -31,11 +31,27 @@
         height: 20px; /* Define the height of the draggable area */
         cursor: grab;
       }
+      #close-button {
+        width: 13%;
+        height: 25%; /* Define the height of the draggable area */
+        position: absolute;
+        left: 88%;
+        top: 6%;
+        cursor: pointer;
+      }
+      .main {
+       display: flex;
+       justify-content: space-between;
+      }
     </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div class="drag-area"></div>
+    <div class="main">
+      <div class="drag-area">
+      </div>
+      <div id="close-button">&#10005;</div>
+    </div>
     <div id="root"></div>
     <!--
       This HTML file is a template.

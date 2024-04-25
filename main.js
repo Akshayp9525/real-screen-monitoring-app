@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow,ipcMain  } = require('electron');
 const path = require('path');
 const isDev = (...args) =>
   import('electron-is-dev').then(({ default: fetch }) => fetch(...args));
@@ -41,12 +41,10 @@ function createWindow() {
     let isDragging = false;
   
     window.on('move', () => {
-      console.log('Window moved');
       isDragging = true;
     });
   
     window.on('resize', () => {
-      console.log('Window resized');
       isDragging = false;
     });
   
@@ -75,7 +73,6 @@ function createWindow() {
       : `file://${path.join(currentDir, '../build/index.html')}`
   );
 }
-
 async function checkWindowSwitch() {
   try {
     const { title } = await activeWin();
@@ -104,5 +101,11 @@ app.on('window-all-closed', () => {
 app.on('activate', () => {
   if (BrowserWindow.getAllWindows().length === 0) {
     createWindow();
+  }
+});
+ipcMain.on('close-window', () => {
+  console.log('Received close-window message');
+  if (mainWindow) {
+      mainWindow.close();
   }
 });

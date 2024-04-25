@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, TextField, Typography, Container, Box } from '@mui/material';
+import { Button, TextField, Typography, Container, Box, Divider } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import './Login.css'
 const Login = ({ onLogin }) => {
@@ -18,10 +18,13 @@ const Login = ({ onLogin }) => {
 
   return (
     <Container component="main" maxWidth="xs">
+      <div className="container">
         <div id="title-bar">Real monitoring app</div>
+      </div>
+    <Divider sx={{marginTop:'10px'}}/>
       <Box
         sx={{
-            marginTop:6,
+            marginTop:3,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',

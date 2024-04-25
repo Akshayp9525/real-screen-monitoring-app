@@ -1,0 +1,56 @@
+.main-card{
+    margin-top: 10px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 10px;
+}
+.meeting-card{
+    margin-top: 10px;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 25px 10px;
+    border-radius: 20px;
+    align-items: center;
+    width: 100%;
+}
+.user{
+display: flex;
+align-items: center;
+justify-content: space-between;
+width: 35%;
+}
+.small-card{
+    margin-top: 10px;
+    height: 50px;
+    overflow-y: scroll;
+}
+.time-snaps{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+.action-buttons{
+    width: 10px !important;
+    height: 30px !important;
+    margin:5px !important;
+    padding: 5px !important;
+}
+.timer-box{
+    display: flex;
+    align-items: center;
+}
+.weekly-hours{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 22%;
+}
+
+.textarea-box{
+    width: 60%;
+}
+.button-box{
+    width: 30%;
+}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Login from './components/Login';
 import { CssBaseline } from '@mui/material';
+import MainLayout from './components';
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -14,7 +15,7 @@ function App() {
       <CssBaseline />
       {authenticated ? (
         <>
-        Welcome to App!
+       <MainLayout/>
         </>
       ) : (
         <Login onLogin={handleLogin} />

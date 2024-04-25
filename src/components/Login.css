@@ -12,6 +12,13 @@
 .login{
     background-color: #F5F5F9;
 }
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 #title-bar {
     -webkit-app-region: drag;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
