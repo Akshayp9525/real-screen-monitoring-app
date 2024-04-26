@@ -18,7 +18,7 @@ function App() {
        <MainLayout/>
         </>
       ) : (
-        <Login onLogin={handleLogin} />
+        <Login  onLogin={handleLogin} />
       )}
     </>
   );
