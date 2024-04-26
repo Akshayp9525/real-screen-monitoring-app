@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import { Button, TextField, Typography, Container, Box, Divider } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import './Login.css'
-const Login = ({ onLogin }) => {
+import './Login.css';
+import { useDispatch, useSelector } from 'react-redux';
+const Login = ({onLogin}) => {
+  const dispatch = useDispatch();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmitLogin = (e,values) => {
+    // dispatch(loginAction(values));
     e.preventDefault();
     if (username === 'admin' && password === 'password') {
       onLogin(true); // Pass the authentication status to the parent component
@@ -15,7 +18,6 @@ const Login = ({ onLogin }) => {
       setError('Invalid username or password');
     }
   };
-
   return (
     <Container component="main" maxWidth="xs">
       <div className="container">
@@ -34,7 +36,7 @@ const Login = ({ onLogin }) => {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmitLogin}>
           <TextField
             margin="normal"
             required
