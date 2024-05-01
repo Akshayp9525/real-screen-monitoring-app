@@ -13,9 +13,9 @@ import { Provider } from 'react-redux';
 ReactDOM.render(
   <Provider store={store}>
     <PersistGate persistor={persistor}>
-      {/* <CustomRouter history={history}> */}
-        <App />
-      {/* </CustomRouter> */}
+    <BrowserRouter>
+    <App />
+  </BrowserRouter>
     </PersistGate>
   </Provider>,
   document.getElementById('root')

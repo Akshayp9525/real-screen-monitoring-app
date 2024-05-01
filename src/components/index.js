@@ -12,7 +12,7 @@ import React, { useEffect, useState } from 'react';
 import './index.css';
 import PauseCircleFilledIcon from '@mui/icons-material/PauseCircleFilled';
 import Textarea from '@mui/joy/Textarea';
-
+import AlarmIcon from '@mui/icons-material/Alarm';
 const MainLayout = () => {
   const [checkInTime, setCheckInTime] = useState(null);
   const [checkOutTime, setCheckOutTime] = useState(null);
@@ -24,7 +24,9 @@ const MainLayout = () => {
     const diff = Math.abs(endTime - startTime);
     const hours = Math.floor(diff / (1000 * 60 * 60));
     const minutes = Math.floor((diff / (1000 * 60)) % 60);
-    return `${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}`;
+    return `${hours < 10 ? '0' : ''}${hours}:${
+      minutes < 10 ? '0' : ''
+    }${minutes}`;
   };
 
   // Function to start the timer
@@ -66,34 +68,57 @@ const MainLayout = () => {
         <div id='title-bar'>Real monitoring app</div>
       </div>
       <Divider sx={{ marginTop: '10px' }} />
-      <Card className='main-card'>
+    <Card>
+      <Box className='meeting-card'>
+      <Box className='header'>
+          <Box className='title' >
+            Profile
+          </Box>
+        </Box>
+        <Box className='main-card'>
         <Box className='user'>
           <Avatar />
           <Typography>Akshay P.</Typography>
         </Box>
         <Box className='weekly-hours'>
-          <Typography>Weekly:  </Typography>
+          <Typography>Weekly: </Typography>
           <Typography>40</Typography>
         </Box>
         <Box className='timer-box'>
-          <Typography>{currentTime ? calculateTimeDifference(currentTime, new Date(timer)) : '00:00'}</Typography>
+          <Typography>
+            {currentTime
+              ? calculateTimeDifference(currentTime, new Date(timer))
+              : '00:00'}
+          </Typography>
           <Box>
             <IconButton onClick={handleCheckIn}>
-              <PauseCircleFilledIcon sx={{ color: 'lightgreen', height: '40px', width: '40px' }} />
+              <PauseCircleFilledIcon
+                sx={{ color: 'lightgreen', height: '40px', width: '40px' }}
+              />
             </IconButton>
           </Box>
         </Box>
-      </Card>
-      <Card className='meeting-card'>
-       <Box className='textarea-box'>
-        <Textarea minRows={2}/>
-       </Box>
-       <Box className='button-box'>
-        <Button size='small' sx={{fontSize:'10px'}} variant='contained'>
-        start meeting
-        </Button>
-       </Box>
-      </Card>
+
+        </Box>
+      </Box>
+      <Box className='meeting-card'>
+        <Box className='header'>
+          <Box className='title' >
+            Meeting
+          </Box>
+        </Box>
+        <Box className='meeting-content'>
+        <Box className='textarea-box'>
+          <Textarea minRows={3} />
+        </Box>
+        <Box className='button-box'>
+          <IconButton color='secondary' aria-label='add an alarm'>
+            <AlarmIcon />
+          </IconButton>
+        </Box>
+        </Box>
+      </Box>
+    </Card>
     </Container>
   );
 };

@@ -14,23 +14,16 @@ const [authenticated,setAuthenticated] = useState(false)
   return (
     <>
       <CssBaseline />
-      {authenticated ? (
-        <>
-       <MainLayout/>
-        </>
-      ) : (
-        <Login  onLogin={handleLogin} />
-      )}
-      {/* <Routes>
+      <Routes>
       <Route element={<PublicRoute/>}>
         <Route path='/' element={<Navigate replace to='/login' />} />
         <Route path='/login' onLogin={handleLogin} element={<Login />} />
       </Route>
-      <Route element={<PrivateRoute/>}>
-        <Route path='/' element={<MainLayout />} />
+      {/* <Route element={<PrivateRoute/>}> */}
+        <Route path='/dashboard' element={<MainLayout />} />
 
-      </Route>
-    </Routes> */}
+      {/* </Route> */}
+    </Routes>
     </>
   );
 }

@@ -3,17 +3,19 @@ import { Button, TextField, Typography, Container, Box, Divider } from '@mui/mat
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import './Login.css';
 import { useDispatch, useSelector } from 'react-redux';
-const Login = ({onLogin}) => {
+import { useNavigate } from 'react-router-dom';
+const Login = () => {
   const dispatch = useDispatch();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-
+  const navigate = useNavigate();
   const handleSubmitLogin = (e,values) => {
     // dispatch(loginAction(values));
     e.preventDefault();
     if (username === 'admin' && password === 'password') {
-      onLogin(true); // Pass the authentication status to the parent component
+      // onLogin(true); // Pass the authentication status to the parent component
+      navigate('/dashboard')
     } else {
       setError('Invalid username or password');
     }

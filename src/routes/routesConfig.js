@@ -8,8 +8,9 @@ const routesConfig = [
     private: false,
   },
   {
-    path: '/',
+    path: '/dashboard',
     component: MainLayout,
+    // private:true
   }
 ];
 

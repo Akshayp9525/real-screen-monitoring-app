@@ -1,19 +1,32 @@
 .main-card{
-    margin-top: 10px;
     height: 100px;
     display: flex;
     justify-content: space-between;
+background-color: #eaeaee;
+border-radius: 20px;
     padding: 25px 10px;
 }
 .meeting-card{
     margin-top: 10px;
     height: 100%;
-    display: flex;
-    justify-content: space-around;
     padding: 25px 10px;
     border-radius: 20px;
     align-items: center;
     width: 100%;
+}
+.meeting-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.header{
+    width: 95%;
+    padding-bottom: 5px;
+    margin: auto;
+}
+.title{
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .user{
 display: flex;
@@ -49,8 +62,8 @@ width: 35%;
 }
 
 .textarea-box{
-    width: 60%;
+    width: 80%;
 }
 .button-box{
-    width: 30%;
+    width: 10%;
 }
